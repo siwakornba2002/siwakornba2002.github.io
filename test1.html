@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PDF Viewer</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.11.338/pdf.min.js"></script>
+  </head>
+  <body>
+    <div id="pdf-viewer"></div>
+    <script>
+      // Specify the PDF file path
+      const pdfPath = "./images/Cer_SiwakornB.pdf";
+
+      // PDF.js code to render the PDF
+      pdfjsLib.getDocument(pdfPath).promise.then(function (pdf) {
+        pdf.getPage(1).then(function (page) {
+          const canvas = document.createElement("canvas");
+          const context = canvas.getContext("2d");
+          const viewport = page.getViewport({ scale: 1 });
+
+          canvas.width = viewport.width;
+          canvas.height = viewport.height;
+
+          const renderContext = {
+            canvasContext: context,
+            viewport: viewport,
+          };
+
+          page.render(renderContext).promise.then(function () {
+            document.getElementById("pdf-viewer").appendChild(canvas);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
