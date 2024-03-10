@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css?family=Poppins"
+      href="https://fonts.googleapis.com/css?family=Montserrat"
     />
     <link
       rel="stylesheet"
@@ -19,403 +19,272 @@
       h2,
       h3,
       h4,
-      h5 {
-        font-family: "Poppins", sans-serif;
+      h5,
+      h6 {
+        font-family: "Montserrat", sans-serif;
       }
-      body {
-        font-size: 16px;
+      .w3-row-padding img {
+        margin-bottom: 12px;
       }
-      img {
-        margin-bottom: -8px;
+      /* Set the width of the sidebar to 120px */
+      .w3-sidebar {
+        width: 250px;
+        background: #222;
       }
-      .mySlides {
-        display: none;
+      /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
+      #main {
+        margin-left: 120px;
+      }
+      /* Remove margins from "page content" on small screens */
+      @media only screen and (max-width: 600px) {
+        #main {
+          margin-left: 0;
+        }
       }
     </style>
   </head>
-  <body class="w3-content w3-black" style="max-width: 1500px">
-    <!-- Header with Slideshow -->
-    <header class="w3-display-container w3-center">
-      <button
-        class="w3-button w3-block w3-green w3-hide-large w3-hide-medium"
-        onclick="document.getElementById('download').style.display='block'"
+  <body class="w3-white">
+    <!-- Icon Bar (Sidebar - hidden on small screens) -->
+    <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
+      <!-- Avatar image in top left corner -->
+      <img src="./images/my_profile_v002.png" style="width: 100%" />
+      <!-- <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
+        <i class="fa fa-home w3-xxlarge"></i>
+        <p>HOME</p>
+      </a> -->
+      <a
+        href="#about"
+        class="w3-bar-item w3-button w3-padding-large w3-black"
       >
-        Download <i class="fa fa-android"></i> <i class="fa fa-apple"></i>
-        <i class="fa fa-windows"></i>
-      </button>
-      <div class="mySlides w3-animate-opacity">
-        <img
-          class="w3-image"
-          src="/w3images/app.jpg"
-          alt="Image 1"
-          style="min-width: 500px"
-          width="1500"
-          height="1000"
-        />
-        <div
-          class="w3-display-left w3-padding w3-hide-small"
-          style="width: 35%"
-        >
-          <div
-            class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large"
-          >
-            <h1 class="w3-xlarge">Take photos with our app</h1>
-            <hr class="w3-opacity" />
-            <p>Super simple installment: free of charge</p>
-            <p>
-              <button
-                class="w3-button w3-block w3-green w3-round"
-                onclick="document.getElementById('download').style.display='block'"
-              >
-                Download <i class="fa fa-android"></i>
-                <i class="fa fa-apple"></i> <i class="fa fa-windows"></i>
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mySlides w3-animate-opacity">
-        <img
-          class="w3-image"
-          src="/w3images/app2.jpg"
-          alt="Image 2"
-          style="min-width: 500px"
-          width="1500"
-          height="1000"
-        />
-        <div
-          class="w3-display-left w3-padding w3-hide-small"
-          style="width: 35%"
-        >
-          <div
-            class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large"
-          >
-            <h1 class="w3-xlarge w3-text-red"><b>CLICK!</b> Fast and Easy</h1>
-            <hr class="w3-opacity" />
-            <p>Choose from thousands of features</p>
-            <p>
-              <button
-                class="w3-button w3-block w3-red w3-round"
-                onclick="document.getElementById('download').style.display='block'"
-              >
-                Download <i class="fa fa-android"></i>
-                <i class="fa fa-apple"></i> <i class="fa fa-windows"></i>
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="mySlides w3-animate-opacity">
-        <img
-          class="w3-image"
-          src="/w3images/app4.jpg"
-          alt="Image 3"
-          style="min-width: 500px"
-          width="1500"
-          height="1000"
-        />
-        <div
-          class="w3-display-left w3-padding w3-hide-small"
-          style="width: 35%"
-        >
-          <div
-            class="w3-black w3-opacity w3-hover-opacity-off w3-padding-large w3-round-large"
-          >
-            <h1 class="w3-xlarge">Smart Design</h1>
-            <hr class="w3-opacity" />
-            <p>Customize photos as you go</p>
-            <p>
-              <button
-                class="w3-button w3-block w3-indigo w3-round"
-                onclick="document.getElementById('download').style.display='block'"
-              >
-                Download <i class="fa fa-android"></i>
-                <i class="fa fa-apple"></i> <i class="fa fa-windows"></i>
-              </button>
-            </p>
-          </div>
-        </div>
-      </div>
+        <i class="fa fa-user w3-xxlarge"></i>
+        <p>ABOUT</p>
+      </a>
+      <!-- <a
+        href="#photos"
+        class="w3-bar-item w3-button w3-padding-large w3-black"
+      >
+        <i class="fa fa-eye w3-xxlarge"></i>
+        <p>PHOTOS</p>
+      </a> -->
       <a
-        class="w3-button w3-black w3-display-right w3-margin-right w3-round w3-hide-small w3-hover-light-grey"
-        onclick="plusDivs(1)"
-        >Take Tour <i class="fa fa-angle-right"></i
-      ></a>
-      <a
-        class="w3-button w3-block w3-black w3-hide-large w3-hide-medium"
-        onclick="plusDivs(1)"
-        >Take Tour <i class="fa fa-angle-right"></i
-      ></a>
-    </header>
+        href="#contact"
+        class="w3-bar-item w3-button w3-padding-large w3-black"
+      >
+        <i class="fa fa-envelope w3-xxlarge"></i>
+        <p>CONTACT</p>
+      </a>
+    </nav>
 
-    <!-- The App Section -->
-    <div class="w3-padding-64 w3-white">
-      <div class="w3-row-padding">
-        <div class="w3-col l8 m6">
-          <h1 class="w3-jumbo"><b>The App</b></h1>
-          <h1 class="w3-xxxlarge w3-text-green"><b>Why buy it?</b></h1>
-          <p>
-            <span class="w3-xlarge">Take photos like a pro.</span> You should
-            buy this app because lorem ipsum consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat. Duis aute irure dolor in
-            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-            pariatur.
-          </p>
-          <button
-            class="w3-button w3-light-grey w3-padding-large w3-section w3-hide-small"
-            onclick="document.getElementById('download').style.display='block'"
-          >
-            <i class="fa fa-download"></i> Download Application
-          </button>
-          <p>
-            Available for <i class="fa fa-android w3-xlarge w3-text-green"></i>
-            <i class="fa fa-apple w3-xlarge"></i>
-            <i class="fa fa-windows w3-xlarge w3-text-blue"></i>
-          </p>
-        </div>
-        <div class="w3-col l4 m6">
-          <img
-            src="/w3images/img_app.jpg"
-            class="w3-image w3-right w3-hide-small"
-            width="335"
-            height="471"
-          />
-          <div class="w3-center w3-hide-large w3-hide-medium">
-            <button
-              class="w3-button w3-block w3-padding-large"
-              onclick="document.getElementById('download').style.display='block'"
-            >
-              <i class="fa fa-download"></i> Download Application
-            </button>
-            <img
-              src="/w3images/img_app.jpg"
-              class="w3-image w3-margin-top"
-              width="335"
-              height="471"
-            />
-          </div>
-        </div>
+    <!-- Navbar on small screens (Hidden on medium and large screens) -->
+    <div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
+      <div
+        class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small"
+      >
+        <!-- <a href="#" class="w3-bar-item w3-button" style="width: 25% !important"
+          >HOME</a
+        > -->
+        <a
+          href="#about"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >ABOUT</a
+        >
+        <!-- <a
+          href="#photos"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >PHOTOS</a
+        > -->
+        <a
+          href="#contact"
+          class="w3-bar-item w3-button"
+          style="width: 25% !important"
+          >CONTACT</a
+        >
       </div>
     </div>
 
+    <!-- Page Content -->
+    <div class="w3-padding-large" id="main">
+      <!-- Header/Home -->
+      <!-- <header class="w3-container w3-padding-32 w3-center w3-white" id="home">
+        <h1 class="w3-jumbo">
+          <span class="w3-hide-small">I'm</span> Siwakorn Bahtthong.
+          My Portfolio
+        </h1>
+        <p>Student</p>
+        <img
+          src="./images/my_profile_v002.png"
+          alt="boy"
+          class="w3-image w3-hover-opacity"
+          width="293"
+          height="387"
+        />
+      </header> -->
+
+      <!-- About Section -->
+      <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
+        <h2 class="w3-text-black w3-border-bottom w3-border-black w3-padding-16">My Information</h2>
+        <p class="w3-text-black">
+          My name is Siwakorn Bahtthong. I'm a developer from Computer Sciene, Kasetsart University. I want to learn more about flims, vfx and animation.
+        </p>
+        <h3 class="w3-padding-16 w3-text-black">Skills</h3>
+        <p class="w3-wide">Python</p>
+        <div class="w3-black">
+          <div class="w3-dark-grey w3-center w3-teal" style="height: 28px; width: 75%">75%</div>
+        </div>
+
+
+        <h3 class="w3-padding-16 w3-text-black">Educations</h3>
+        <div class="w3-row">
+          <div class="w3-col m6">
+            <div class="w3-container w3-card w3-white w3-round w3-margin">
+              <p class="w3-left">
+                <img
+                  src="./images/KU_Logo.png"
+                  alt="Avatar"
+                  class="w3-left w3-circle w3-margin-right"
+                  style="width: 70px"
+                />
+              </p>
+              <h5 class="w3-padding-16">
+                <i class="w3-margin-right w3-text-teal"></i>Kasetsart University
+              </h5>
+              <div class="w3-container">
+                <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 -
+                  2024
+                </h6>
+                <p>Department of Computer Science</p>
+                <p>Faculty of Science</p>
+                <p>Thailand</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <h3 class="w3-padding-16 w3-text-black">Works and Experiences</h3>
+        <div class="w3-row">
+          <div class="w3-col m6">
+            <div class="w3-container w3-card w3-white w3-round w3-margin">
+              <p class="w3-left">
+                <img
+                  src="./images/kasetfairverse_icon.png"
+                  alt="Avatar"
+                  class="w3-left w3-circle w3-margin-right"
+                  style="width: 120px"
+                />
+              </p>
+              <h5 class="w3-padding-16">
+                <i class="w3-margin-right w3-text-teal"></i>KasetFair Metaverse 2024
+              </h5>
+              <div class="w3-container">
+                <!-- <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 -
+                  2024
+                </h6> -->
+                <!-- <p>Department of Computer Science</p>
+                <p>Faculty of Science</p>
+                <p>Thailand</p> -->
+                <p>Pipeline and Support</p>
+                <p><button class="w3-button w3-block w3-light-gray w3-round" onclick="showModal('certificate', './images/Cer_SiwakornB.pdf#toolbar=0')"><i class="fa fa-external-link"></i> View Certificate</button></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="w3-col m6">
+            <div class="w3-container w3-card w3-white w3-round w3-margin">
+              <p class="w3-left">
+                <img
+                  src="./images/TheMonkLogo_BlackBG-01.png"
+                  alt="Avatar"
+                  class="w3-left w3-circle w3-margin-right"
+                  style="width: 75px"
+                />
+              </p>
+              <h5 class="w3-padding-16">
+                <i class="w3-margin-right w3-text-teal"></i>The Monk Studios Internships
+              </h5>
+              <div class="w3-container">
+                <!-- <h6 class="w3-text-teal">
+                  <i class="fa fa-calendar fa-fw w3-margin-right"></i>2020 -
+                  2024
+                </h6> -->
+                <!-- <p>Department of Computer Science</p>
+                <p>Faculty of Science</p>
+                <p>Thailand</p> -->
+                <p>Junior Pipeline Engineer</p>
+                <p><button class="w3-button w3-block w3-light-gray w3-round" onclick="showModal('certificate', './images/the_monk_studios.pdf#toolbar=0')"><i class="fa fa-external-link"></i> View Certificate</button></p>
+              </div>
+            </div>
+          </div>
+           
+        </div>
+      
+     
+
+      <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
+        <i class="fa fa-download"></i> Download Resume
+      </button> -->
+
+
+      <div class="w3-padding-64 w3-content w3-text-black" id="contact">
+        <h2 class="w3-text-black w3-border-bottom w3-border-black w3-padding-16">Contact Me</h2>
+        <!-- <hr style="width: 200px" class="w3-opacity" /> -->
+
+        <div class="w3-section w3-text-black">
+          <p>
+            <i
+              class="fa fa-map-marker fa-fw w3-text-black w3-xxlarge w3-margin-right"
+            ></i>
+            Bangkok, Thailand
+          </p>
+          <p>
+            <i
+              class="fa fa-envelope fa-fw w3-text-black w3-xxlarge w3-margin-right"
+            >
+            </i>
+            Email: siwakorn.ba2002@gmail.com
+          </p>
+        </div>
+
+      </div>
+
+
     <!-- Modal -->
-    <div id="download" class="w3-modal w3-animate-opacity">
+    <div id="certificate" class="w3-modal w3-animate-opacity">
       <div class="w3-modal-content" style="padding: 32px">
         <div class="w3-container w3-white">
           <i
-            onclick="document.getElementById('download').style.display='none'"
+            onclick="document.getElementById('certificate').style.display='none'"
             class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"
           ></i>
-          <h2 class="w3-wide">DOWNLOAD</h2>
+          <!-- <h2 class="w3-wide">DOWNLOAD</h2>
           <p>Download the app in AppStore, Google Play or Microsoft Store.</p>
-          <i class="fa fa-android w3-large"></i>
-          <i class="fa fa-apple w3-large"></i>
-          <i class="fa fa-windows w3-large"></i>
-          <p>
-            <input
-              class="w3-input w3-border"
-              type="text"
-              placeholder="Enter e-mail"
-            />
-          </p>
-          <button
-            type="button"
-            class="w3-button w3-block w3-padding-large w3-red w3-margin-bottom"
-            onclick="document.getElementById('download').style.display='none'"
-          >
-            Fake Download
-          </button>
+ -->
+          <div class="w3-container">
+
+            <iframe id="certificateImage" src="" width="640" height="480" allow="autoplay"></iframe>
+
+          </div>
+        <!-- <img id="certificateImage" src="" alt="Certificate Image" class="w3-left w3-margin-right" style="width: 100px"> -->
         </div>
       </div>
     </div>
 
-    <!-- Clarity Section -->
-    <div class="w3-padding-64 w3-light-grey">
-      <div class="w3-row-padding">
-        <div class="w3-col l4 m6">
-          <img
-            class="w3-image w3-round-large w3-hide-small w3-grayscale"
-            src="/w3images/app5.jpg"
-            alt="App"
-            width="335"
-            height="471"
-          />
-        </div>
-        <div class="w3-col l8 m6">
-          <h1 class="w3-jumbo"><b>Clarity</b></h1>
-          <h1 class="w3-xxxlarge w3-text-red"><b>Pixels, who?</b></h1>
-          <p>
-            <span class="w3-xlarge">A revolution in resolution.</span> Sharp and
-            clear photos with the world's best photo engine, incididunt ut
-            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo
-            consequat. Duis aute irure dolor in reprehenderit in voluptate velit
-            esse cillum dolore eu fugiat nulla pariatur.
-          </p>
-        </div>
-      </div>
     </div>
 
-    <!-- Features Section -->
-    <div class="w3-container w3-padding-64 w3-dark-grey w3-center">
-      <h1 class="w3-jumbo"><b>Features</b></h1>
-      <p>This app is just so lorem ipsum.</p>
 
-      <div class="w3-row" style="margin-top: 64px">
-        <div class="w3-col s3">
-          <i class="fa fa-bolt w3-text-orange w3-jumbo"></i>
-          <p>Fast</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-heart w3-text-red w3-jumbo"></i>
-          <p>Loved</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-camera w3-text-yellow w3-jumbo"></i>
-          <p>Clarity</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-battery-full w3-text-green w3-jumbo"></i>
-          <p>Power</p>
-        </div>
-      </div>
 
-      <div class="w3-row" style="margin-top: 64px">
-        <div class="w3-col s3">
-          <i class="fa fa-diamond w3-text-white w3-jumbo"></i>
-          <p>Sharp</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-cloud w3-text-blue w3-jumbo"></i>
-          <p>Cloud</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-globe w3-text-amber w3-jumbo"></i>
-          <p>Global</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-hdd-o w3-text-cyan w3-jumbo"></i>
-          <p>Storage</p>
-        </div>
-      </div>
+    
+<script>
+  function showModal(data, imageUrl) {
+    document.getElementById('certificate').style.display = 'block';
+    document.getElementById('certificateImage').src = imageUrl;
+  }
+</script>
 
-      <div class="w3-row" style="margin-top: 64px">
-        <div class="w3-col s3">
-          <i class="fa fa-user w3-text-sand w3-jumbo"></i>
-          <p>Safe</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-shield w3-text-orange w3-jumbo"></i>
-          <p>Stabile</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-wifi w3-text-grey w3-jumbo"></i>
-          <p>Connected</p>
-        </div>
-        <div class="w3-col s3">
-          <i class="fa fa-image w3-text-pink w3-jumbo"></i>
-          <p>HD</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Pricing Section -->
-    <div class="w3-padding-64 w3-center w3-white">
-      <h1 class="w3-jumbo"><b>Pricing</b></h1>
-      <p class="w3-large">Choose a pricing plan that fits your needs.</p>
-      <div class="w3-row-padding" style="margin-top: 64px">
-        <div class="w3-half w3-section">
-          <ul class="w3-ul w3-card w3-hover-shadow">
-            <li class="w3-dark-grey w3-xlarge w3-padding-32">Basic</li>
-            <li class="w3-padding-16"><b>250</b> Photos</li>
-            <li class="w3-padding-16"><b>10</b> Features</li>
-            <li class="w3-padding-16"><b>No</b> Ads</li>
-            <li class="w3-padding-16"><b>Office hours</b> Support</li>
-            <li class="w3-padding-16">
-              <h2 class="w3-opacity">$ 25</h2>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button
-                class="w3-button w3-black w3-padding-large"
-                onclick="document.getElementById('download').style.display='block'"
-              >
-                <i class="fa fa-download"></i> Download
-              </button>
-            </li>
-          </ul>
-        </div>
-        <div class="w3-half w3-section">
-          <ul class="w3-ul w3-card w3-hover-shadow">
-            <li class="w3-red w3-xlarge w3-padding-32">Premium</li>
-            <li class="w3-padding-16"><b>1000</b> Photos</li>
-            <li class="w3-padding-16"><b>50</b> Features</li>
-            <li class="w3-padding-16"><b>No</b> Ads</li>
-            <li class="w3-padding-16"><b>Endless</b> Support</li>
-            <li class="w3-padding-16">
-              <h2 class="w3-opacity">$ 99</h2>
-            </li>
-            <li class="w3-light-grey w3-padding-24">
-              <button
-                class="w3-button w3-black w3-padding-large"
-                onclick="document.getElementById('download').style.display='block'"
-              >
-                <i class="fa fa-download"></i> Download
-              </button>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <br />
-    </div>
-
-    <!-- Footer -->
-    <footer
-      class="w3-container w3-padding-32 w3-light-grey w3-center w3-xlarge"
-    >
-      <div class="w3-section">
-        <i class="fa fa-facebook-official w3-hover-opacity"></i>
-        <i class="fa fa-instagram w3-hover-opacity"></i>
-        <i class="fa fa-snapchat w3-hover-opacity"></i>
-        <i class="fa fa-pinterest-p w3-hover-opacity"></i>
-        <i class="fa fa-twitter w3-hover-opacity"></i>
-        <i class="fa fa-linkedin w3-hover-opacity"></i>
-      </div>
-      <p class="w3-medium">
-        Powered by
-        <a
-          href="https://www.w3schools.com/w3css/default.asp"
-          target="_blank"
-          class="w3-hover-text-green"
-          >w3.css</a
-        >
-      </p>
-    </footer>
-
-    <script>
-      // Slideshow
-      var slideIndex = 1;
-      showDivs(slideIndex);
-
-      function plusDivs(n) {
-        showDivs((slideIndex += n));
-      }
-
-      function showDivs(n) {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        if (n > x.length) {
-          slideIndex = 1;
-        }
-        if (n < 1) {
-          slideIndex = x.length;
-        }
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";
-        }
-        x[slideIndex - 1].style.display = "block";
-      }
-    </script>
   </body>
+
+  
 </html>
