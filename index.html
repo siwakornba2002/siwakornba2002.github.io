@@ -156,11 +156,11 @@
                 <p>Pipeline and Support</p>
                 <p>
                   <button
-                    class="w3-button w3-block w3-light-gray w3-round"
-                    onclick="showModal('certificate', './images/Cer_SiwakornB.pdf#toolbar=0&embedded=true')"
-                  >
-                    <i class="fa fa-external-link"></i> View Certificate
-                  </button>
+                  class="w3-button w3-block w3-light-gray w3-round"
+                  onclick="window.open('https://drive.google.com/file/d/1kSn0416TRL0AtN_oJQFaxxwDJXtYrDgx/view','_blank')"
+                >
+                  <i class="fa fa-external-link"></i> View Certificate
+                </button>
                 </p>
               </div>
             </div>
@@ -183,9 +183,9 @@
               <div class="w3-container">
                 <p>Junior Pipeline Engineer</p>
                 <p>
-                  <button
+                    <button
                     class="w3-button w3-block w3-light-gray w3-round"
-                    onclick="showModal('certificate', './images/the_monk_studios.pdf#toolbar=0&embedded=true')"
+                    onclick="window.open('https://drive.google.com/file/d/1xFYw-Z2Bu7oFH-Vl_cBPAeP_3J2Ow9te/view','_blank')"
                   >
                     <i class="fa fa-external-link"></i> View Certificate
                   </button>
@@ -219,34 +219,5 @@
         </div>
       </div>
 
-      <!-- Modal -->
-      <div id="certificate" class="w3-modal w3-animate-opacity">
-        <div class="w3-modal-content" style="padding: 32px">
-          <div class="w3-container w3-white">
-            <i
-              onclick="document.getElementById('certificate').style.display='none'"
-              class="fa fa-remove w3-xlarge w3-button w3-transparent w3-right w3-xlarge"
-            ></i>
-            <div class="w3-container">
-              <iframe
-                id="certificateImage"
-                src=""
-                frameborder="0" 
-                height="500px"
-                width="100%"
-                allow="autoplay"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      function showModal(data, imageUrl) {
-        document.getElementById("certificate").style.display = "block";
-        document.getElementById("certificateImage").src = imageUrl;
-      }
-    </script>
   </body>
 </html>
